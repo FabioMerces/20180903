@@ -5,18 +5,43 @@
 <title>Insert title here</title>
 </head>
 <body>
+    <script>
+        function calcVal(){
+            var soma, desconto;
+            soma = 2+7;
+            
+            if (document.getElementById("masa").checked==true)
+                soma = 60;
+            else if (document.getElementById("carn").checked==true)
+                soma = 80;
+                soma = 70;
+
+            if (document.getElementById("selected").value = "10")
+                desconto = 0.10;
+            else if (document.getElementById("selected").value = "12")
+                desconto = 0.12;
+            else if (document.getElementById("selected").selectedIndex==3)
+                desconto = 0.15;
+            else if (document.getElementById("selected").selectedIndex==4)
+                desconto = 0.25;
+            else
+                desconto = 0;
+
+            alert("A soma eh: " + soma + ". O desconto eh: " + desconto);
+        }
+    </script>
 	<div>
 		<h1>Escolha seu prato</h1>
 	</div>
 	<div>
 		<p>Prato principal: </p>
-		<form action="">
-			<input type="radio" name="mistura" value="massa"> Massa
-			<input type="radio" name="mistura" value="carne"> Carne
-			<input type="radio" name="mistura" value="peixe"> Peixe
+		<form >
+			<input type="radio" name="mistura" value="60" Id="masa"> Massa
+			<input type="radio" name="mistura" value="80" Id="carn"> Carne
+			<input type="radio" name="mistura" value="70" Id="pexe"> Peixe
 		
 			<p>Convênio: </p> 
-			<select>
+			<select Id="selected">
 			  <option value="10" Id="conv1">Fatec</option>
 			  <option value="12" Id="conv2">Prefeitura</option>
 			  <option value="15" Id="conv3">Func. Publico</option>
@@ -27,8 +52,10 @@
 			<p>Observações</p>
 			<textarea rows="4" cols="50">Shiguidoo</textarea>
 			<br>
-			<button>Enviar</button>
-		</form>
+			<button onclick="calcVal()">Enviar</button>
+        </form>
+        <p id="demo"></p>
+
 	</div>
 	
 </body>
